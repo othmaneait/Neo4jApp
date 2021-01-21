@@ -15,9 +15,19 @@ public interface UserRepository extends Neo4jRepository<User, Long> {
     User adduser(@Param("r") User r);
 @Query("match(n:User{nom:$a})  \n" +
         "match(m:Transport{nom:'bus'}) \n" +
-        "create (n)-[r:Rated{Rated:'2'}]->(m) \n"+
+        "create (n)-[r:Rated{Rated:'$b'}]->(m) \n"+
            "return n")
     User changebus(@Param("a") String a,@Param("b") int b  );
+    @Query("match(n:User{nom:$a})  \n" +
+            "match(m:Transport{nom:'tram'}) \n" +
+            "create (n)-[r:Rated{Rated:'$b'}]->(m) \n"+
+            "return n")
+    User changetram(@Param("a") String a,@Param("b") int b  );
+    @Query("match(n:User{nom:$a})  \n" +
+            "match(m:Transport{nom:'taxi'}) \n" +
+            "create (n)-[r:Rated{Rated:'$b'}]->(m) \n"+
+            "return n")
+    User changetaxi(@Param("a") String a,@Param("b") int b  );
    /* @Query("match(n:User) where ID(n)= $a match(m:Transport{name:'tram'})  CREATE (n)-[r:Rated { Rated: $b}]->(m)  ")
     void changetram(@Param("a") int a,@Param("b") int b  );
     @Query("match(n:User) where ID(n)= $a match(m:Transport{name:'taxi'})  CREATE (n)-[r:Rated { Rated: $b}]->(m)   ")

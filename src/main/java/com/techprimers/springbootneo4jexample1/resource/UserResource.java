@@ -23,7 +23,11 @@ public class UserResource {
     public User adduser(@RequestBody User e){
 
          userService.adduser(e);
-         return   userService.changeprefbus(e);
+            userService.changeprefbus(e);
+        userService.changepreftaxi(e);
+
+      return  userService.changepreftram(e);
+
 
 
     }

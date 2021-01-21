@@ -27,14 +27,14 @@ public class UserService {
         return a;
 
     }
-  /* public void changepreftaxi(User a){
-        userRepository.changetaxi( a.getId().intValue(),a.getNotetaxi());
-    }*/
+   public User changepreftaxi(User a){
+       return userRepository.changetaxi( a.getNom(),a.getNotetaxi());
+    }
     public User changeprefbus(User a){
        return userRepository.changebus(a.getNom(),a.getNotebus());
     }
-  /*  public void changepreftram(User a){
-        userRepository.changetram(a.getId().intValue(),a.getNotetram());
-    }*/
+    public User changepreftram(User a){
+        return userRepository.changetram(a.getNom(),a.getNotetram());
+    }
 
 }
