@@ -2,9 +2,6 @@ package com.techprimers.springbootneo4jexample1.model;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
-
-import java.util.List;
 
 @NodeEntity
 public class User {
@@ -13,33 +10,33 @@ public class User {
     private Long id;
     private String nom;
 
-    public int getNotebus() {
+    public String getNotebus() {
         return notebus;
     }
 
-    public void setNotebus(int notebus) {
+    public void setNotebus(String notebus) {
         this.notebus = notebus;
     }
 
-    public int getNotetram() {
+    public String getNotetram() {
         return notetram;
     }
 
-    public void setNotetram(int notetram) {
+    public void setNotetram(String notetram) {
         this.notetram = notetram;
     }
 
-    public int getNotetaxi() {
+    public String getNotetaxi() {
         return notetaxi;
     }
 
-    public void setNotetaxi(int notetaxi) {
+    public void setNotetaxi(String notetaxi) {
         this.notetaxi = notetaxi;
     }
 
-    private int notebus ;
-    private int notetram ;
-    private int notetaxi;
+    private String notebus ;
+    private String notetram ;
+    private String notetaxi;
 
     public void setId(Long id) {
         this.id = id;
